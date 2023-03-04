@@ -36,8 +36,31 @@ public class TestCalculator {
         calculator.calcAdd();
         System.out.println("Hasil = "+calculator.getTxtResult());
         Assert.assertEquals(calculator.getTxtResult(),"3");
+        calculator.clear();
     }
 
+    @Test
+    public void testSub() {
+        calculator.calcSubtraction();
+        System.out.println("Hasil = "+calculator.getTxtResult());
+        Assert.assertEquals(calculator.getTxtResult(),"1");
+        calculator.clear();
+    }
+    @Test
+    public void testdiv() {
+        calculator.calcDivision();
+        System.out.println("Hasil = "+calculator.getTxtResult());
+        Assert.assertEquals(calculator.getTxtResult(),"2");
+        calculator.clear();
+    }
+
+    @Test
+    public void testMul() {
+        calculator.calcMultiplication();
+        System.out.println("Hasil = "+calculator.getTxtResult());
+        Assert.assertEquals(calculator.getTxtResult(),"8");
+        calculator.clear();
+    }
     @AfterClass
     public void closeApp() {
         driver.quit();

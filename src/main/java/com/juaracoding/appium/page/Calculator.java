@@ -22,14 +22,27 @@ public class Calculator {
     private MobileElement btnSatu;
     @AndroidFindBy(id = "com.google.android.calculator:id/digit_2")
     private MobileElement btnDua;
+    @AndroidFindBy(id = "com.google.android.calculator:id/digit_3")
+    private MobileElement btnTiga;
+    @AndroidFindBy(id = "com.google.android.calculator:id/digit_4")
+    private MobileElement btnEmpat;
+
 
 
     // locator aritmatika
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"plus\"]")
     private MobileElement btnTambah;
-
+    @AndroidFindBy(id = "com.google.android.calculator:id/op_sub")
+    private MobileElement btnKurang;
+    @AndroidFindBy(id = "com.google.android.calculator:id/op_div")
+    private MobileElement btnBagi;
     @AndroidFindBy(id = "com.google.android.calculator:id/eq")
     private MobileElement btnSamaDengan;
+    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"multiply\"]")
+    private MobileElement btnKali;
+    @AndroidFindBy(id = "com.google.android.calculator:id/clr")
+    private MobileElement btnClear;
+
 
     // locator result
     @AndroidFindBy(id = "com.google.android.calculator:id/result_final")
@@ -41,8 +54,33 @@ public class Calculator {
         btnDua.click();
         btnSamaDengan.click();
     }
+    public void calcSubtraction() {
+        btnEmpat.click();
+        btnKurang.click();
+        btnTiga.click();
+        btnSamaDengan.click();
+    }
+
+    public void calcDivision() {
+        btnEmpat.click();
+        btnBagi.click();
+        btnDua.click();
+        btnSamaDengan.click();
+    }
+
+    public void calcMultiplication() {
+        btnEmpat.click();
+        btnKali.click();
+        btnDua.click();
+        btnSamaDengan.click();
+    }
+
+    
     public String getTxtResult() {
         return result.getText();
     }
 
+    public void clear() {
+        btnClear.click();
+    }
 }
